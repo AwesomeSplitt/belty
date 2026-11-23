@@ -2,12 +2,12 @@ package net.awesomesplitt.belty;
 
 import dev.architectury.networking.NetworkManager;
 import dev.architectury.registry.menu.MenuRegistry;
-import net.awesomesplitt.belty.client.KeyMappingRegistries;
-import net.awesomesplitt.belty.client.model.geom.BeltyModelLayers;
-import net.awesomesplitt.belty.event.ClientEvents;
-import net.awesomesplitt.belty.item.ItemRegistries;
+import net.awesomesplitt.belty.registry.KeyMappingRegistries;
+import net.awesomesplitt.belty.registry.ModelLayerRegistries;
+import net.awesomesplitt.belty.client.ClientEvents;
+import net.awesomesplitt.belty.registry.ItemRegistries;
 import net.awesomesplitt.belty.network.OpenGuiPayload;
-import net.awesomesplitt.belty.screen.MenuRegistries;
+import net.awesomesplitt.belty.registry.MenuRegistries;
 import net.awesomesplitt.belty.screen.ToolBeltMenu;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.SimpleMenuProvider;
@@ -19,7 +19,7 @@ public final class Belty {
         ItemRegistries.register();
         MenuRegistries.register();
         KeyMappingRegistries.register();
-        BeltyModelLayers.register();
+        ModelLayerRegistries.register();
         ClientEvents.register();
 
         NetworkManager.registerReceiver(NetworkManager.c2s(),

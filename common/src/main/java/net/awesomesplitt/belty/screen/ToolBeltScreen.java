@@ -2,10 +2,7 @@ package net.awesomesplitt.belty.screen;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.awesomesplitt.belty.Belty;
-import net.awesomesplitt.belty.client.KeyMappingRegistries;
-import net.awesomesplitt.belty.item.ToolBeltContainer;
-import net.awesomesplitt.belty.item.ToolBeltItem;
-import net.minecraft.client.Minecraft;
+import net.awesomesplitt.belty.registry.KeyMappingRegistries;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.gui.screens.inventory.CyclingSlotBackground;
@@ -16,7 +13,6 @@ import net.minecraft.world.entity.player.Inventory;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Logger;
 
 public class ToolBeltScreen extends AbstractContainerScreen<ToolBeltMenu> {
     private static final ResourceLocation GUI_TEXTURE =

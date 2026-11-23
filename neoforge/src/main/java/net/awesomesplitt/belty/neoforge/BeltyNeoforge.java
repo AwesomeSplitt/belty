@@ -1,7 +1,7 @@
 package net.awesomesplitt.belty.neoforge;
 
-import net.awesomesplitt.belty.client.renderer.entity.layers.ToolBeltLayer;
-import net.awesomesplitt.belty.screen.MenuRegistries;
+import net.awesomesplitt.belty.client.renderer.ToolBeltLayer;
+import net.awesomesplitt.belty.registry.MenuRegistries;
 import net.awesomesplitt.belty.screen.ToolBeltScreen;
 import net.minecraft.client.renderer.entity.player.PlayerRenderer;
 import net.minecraft.client.resources.PlayerSkin;
