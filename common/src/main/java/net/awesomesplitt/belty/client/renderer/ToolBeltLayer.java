@@ -1,11 +1,9 @@
-package net.awesomesplitt.belty.client.renderer.entity.layers;
+package net.awesomesplitt.belty.client.renderer;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.awesomesplitt.belty.Belty;
-import net.awesomesplitt.belty.client.model.ToolBeltModel;
-import net.awesomesplitt.belty.client.model.geom.BeltyModelLayers;
-import net.awesomesplitt.belty.item.ItemRegistries;
+import net.awesomesplitt.belty.registry.ModelLayerRegistries;
 import net.awesomesplitt.belty.item.ToolBeltItem;
 import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.geom.EntityModelSet;
@@ -26,7 +24,7 @@ public class ToolBeltLayer<T extends LivingEntity, M extends EntityModel<T>> ext
 
     public ToolBeltLayer(RenderLayerParent<T, M> renderLayerParent, EntityModelSet entityModelSet) {
         super(renderLayerParent);
-        this.beltModel = new ToolBeltModel<>(entityModelSet.bakeLayer(BeltyModelLayers.TOOL_BELT));
+        this.beltModel = new ToolBeltModel<>(entityModelSet.bakeLayer(ModelLayerRegistries.TOOL_BELT));
     }
 
     @Override

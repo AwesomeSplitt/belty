@@ -1,4 +1,4 @@
-package net.awesomesplitt.belty.client.model;
+package net.awesomesplitt.belty.client.renderer;
 
 // Made with Blockbench 5.2.2
 // Exported for Minecraft version 1.17 or later with Mojang mappings

@@ -1,11 +1,11 @@
-package net.awesomesplitt.belty.screen;
+package net.awesomesplitt.belty.registry;
 
 import dev.architectury.registry.menu.MenuRegistry;
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
 import net.awesomesplitt.belty.Belty;
+import net.awesomesplitt.belty.screen.ToolBeltMenu;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.world.flag.FeatureFlagSet;
 import net.minecraft.world.inventory.MenuType;
 
 public class MenuRegistries {

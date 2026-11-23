@@ -1,4 +1,4 @@
-package net.awesomesplitt.belty.client;
+package net.awesomesplitt.belty.registry;
 
 import com.mojang.blaze3d.platform.InputConstants;
 import dev.architectury.registry.client.keymappings.KeyMappingRegistry;

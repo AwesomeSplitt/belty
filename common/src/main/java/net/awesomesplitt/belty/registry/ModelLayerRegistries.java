@@ -1,12 +1,12 @@
-package net.awesomesplitt.belty.client.model.geom;
+package net.awesomesplitt.belty.registry;
 
 import dev.architectury.registry.client.level.entity.EntityModelLayerRegistry;
 import net.awesomesplitt.belty.Belty;
-import net.awesomesplitt.belty.client.model.ToolBeltModel;
+import net.awesomesplitt.belty.client.renderer.ToolBeltModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.resources.ResourceLocation;
 
-public class BeltyModelLayers {
+public class ModelLayerRegistries {
     public static ModelLayerLocation TOOL_BELT = register("tool_belt");
 
     private static ModelLayerLocation register(String name) {

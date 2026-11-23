@@ -1,7 +1,7 @@
 package net.awesomesplitt.belty.item;
 
 import dev.architectury.registry.menu.MenuRegistry;
-import net.awesomesplitt.belty.enchantment.BeltyEnchantments;
+import net.awesomesplitt.belty.registry.EnchantmentRegistries;
 import net.awesomesplitt.belty.screen.ToolBeltMenu;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.server.level.ServerPlayer;
@@ -57,7 +57,7 @@ public class ToolBeltItem extends Item implements Equipable {
     }
 
     public static int getCargoLevel(ItemStack item, Level level) {
-        var enchantment = level.holderLookup(Registries.ENCHANTMENT).getOrThrow(BeltyEnchantments.CARGO);
+        var enchantment = level.holderLookup(Registries.ENCHANTMENT).getOrThrow(EnchantmentRegistries.CARGO);
         return item.getEnchantments().getLevel(enchantment);
     }
 

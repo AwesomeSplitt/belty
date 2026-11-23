@@ -1,15 +1,13 @@
-package net.awesomesplitt.belty.event;
+package net.awesomesplitt.belty.client;
 
 import dev.architectury.event.events.client.ClientLifecycleEvent;
 import dev.architectury.event.events.client.ClientTickEvent;
 import dev.architectury.networking.NetworkManager;
-import dev.architectury.platform.Platform;
 import dev.architectury.registry.menu.MenuRegistry;
-import net.awesomesplitt.belty.client.KeyMappingRegistries;
-import net.awesomesplitt.belty.client.model.geom.BeltyModelLayers;
+import net.awesomesplitt.belty.registry.KeyMappingRegistries;
 import net.awesomesplitt.belty.item.ToolBeltItem;
 import net.awesomesplitt.belty.network.OpenGuiPayload;
-import net.awesomesplitt.belty.screen.MenuRegistries;
+import net.awesomesplitt.belty.registry.MenuRegistries;
 import net.awesomesplitt.belty.screen.ToolBeltMenu;
 import net.awesomesplitt.belty.screen.ToolBeltScreen;
 import net.minecraft.client.Minecraft;

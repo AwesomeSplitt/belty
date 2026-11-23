@@ -1,8 +1,9 @@
-package net.awesomesplitt.belty.item;
+package net.awesomesplitt.belty.registry;
 
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
 import net.awesomesplitt.belty.Belty;
+import net.awesomesplitt.belty.item.ToolBeltItem;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;

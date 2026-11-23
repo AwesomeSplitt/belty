@@ -1,11 +1,10 @@
 package net.awesomesplitt.belty.screen;
 
-import io.netty.buffer.ByteBuf;
 import net.awesomesplitt.belty.item.ToolBeltContainer;
 import net.awesomesplitt.belty.item.ToolBeltItem;
-import net.awesomesplitt.belty.tags.BeltyItemTags;
+import net.awesomesplitt.belty.registry.MenuRegistries;
+import net.awesomesplitt.belty.registry.TagRegistries;
 import net.minecraft.network.FriendlyByteBuf;
-import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.world.Container;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
@@ -38,7 +37,7 @@ public class ToolBeltMenu extends AbstractContainerMenu {
     @Override
     public ItemStack quickMoveStack(Player player, int i) {
         ItemStack itemStack = ItemStack.EMPTY;
-        Slot slot = (Slot)this.slots.get(i);
+        Slot slot = this.slots.get(i);
         if (slot.hasItem()) {
             ItemStack itemStack2 = slot.getItem();
             itemStack = itemStack2.copy();
@@ -107,8 +106,8 @@ public class ToolBeltMenu extends AbstractContainerMenu {
         @Override
         public boolean mayPlace(ItemStack itemStack) {
             return switch (this.slotType) {
-                case Type.TOOL -> itemStack.is(BeltyItemTags.TOOLS_BELT_ACCEPTED);
-                case Type.BUNDLE -> itemStack.is(BeltyItemTags.BUNDLES_BELT_ACCEPTED);
+                case Type.TOOL -> itemStack.is(TagRegistries.Items.TOOLS_BELT_ACCEPTED);
+                case Type.BUNDLE -> itemStack.is(TagRegistries.Items.BUNDLES_BELT_ACCEPTED);
             };
         }
 
