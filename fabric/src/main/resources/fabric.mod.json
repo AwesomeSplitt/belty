@@ -29,7 +29,7 @@
     "fabricloader": ">=0.20.1",
     "minecraft": "~1.21.1",
     "java": ">=21",
-    "architectury": ">=22.0.6",
+    "architectury": ">=13.0.11",
     "fabric-api": "*",
     "vanillabackport": ">=1.2.2"
   },
