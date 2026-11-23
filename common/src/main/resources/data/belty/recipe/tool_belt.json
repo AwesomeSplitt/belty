@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "SLS",
+    "L L",
+    "BLB"
+  ],
+  "key": {
+    "S": {"tag": "c:strings"},
+    "L": {"tag": "c:leathers"},
+    "B": {"tag": "minecraft:bundles"}
+  },
+  "result": {
+    "id": "belty:tool_belt",
+    "count": 1
+  }
+}

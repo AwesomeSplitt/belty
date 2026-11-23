@@ -1,0 +1,117 @@
+[18:21:11] [main/INFO] (Launcher) ModLauncher running: args [--launchTarget, forgeclientdev, --version, 21.1.252, --assetIndex, 1.21.1-17, --assetsDir, C:\Users\rarab\.gradle\caches\fabric-loom\assets, --gameDir, ., --fml.fmlVersion, 4.0.44, --fml.mcVersion, 1.21.1, --fml.neoForgeVersion, 21.1.252, --fml.neoFormVersion, 20240808.144430]
+[18:21:11] [main/INFO] (Launcher) JVM identified as Eclipse Adoptium OpenJDK 64-Bit Server VM 21.0.5+11-LTS
+[18:21:11] [main/INFO] (Launcher) ModLauncher 11.0.5+main.901c6ea8 starting: java version 21.0.5 by Eclipse Adoptium; OS Windows 11 arch amd64 version 10.0
+[18:21:12] [main/INFO] (unprotect) Initializing Unprotect using ModLauncher backend, target: Minecraft and loader classes (minecraft+forge)
+[18:21:12] [main/INFO] (ImmediateWindowHandler) Loading ImmediateWindowProvider fmlearlywindow
+[18:21:12] [main/INFO] (EARLYDISPLAY) Trying GL version 4.6
+[18:21:12] [main/INFO] (EARLYDISPLAY) Requested GL version 4.6 got version 4.6
+[18:21:12] [main/INFO] (mixin) SpongePowered MIXIN Subsystem Version=0.8.7 Source=union:/C:/Users/rarab/.gradle/caches/modules-2/files-2.1/net.fabricmc/sponge-mixin/0.15.2+mixin.0.8.7/2af2f021d8e02a0220dc27a7a72b4666d66d44ca/sponge-mixin-0.15.2+mixin.0.8.7.jar%23126!/ Service=ModLauncher Env=CLIENT
+[18:21:13] [main/INFO] (ModDiscoverer) Found mod file "neoforge-21.1.252-minecraft-merged-1.21.1-loom.mappings.1_21_1.layered+hash.40359-v2-neoforge-21.1.252.jar" [locator: neoforge devenv provider ([C:\Users\rarab\.gradle\caches\fabric-loom\minecraftMaven\net\minecraft\neoforge-21.1.252-minecraft-merged\1.21.1-loom.mappings.1_21_1.layered+hash.40359-v2-neoforge-21.1.252\neoforge-21.1.252-minecraft-merged-1.21.1-loom.mappings.1_21_1.layered+hash.40359-v2-neoforge-21.1.252.jar])]
+[18:21:13] [pool-5-thread-1/INFO] (EARLYDISPLAY) GL info: NVIDIA GeForce RTX 4060/PCIe/SSE2 GL version 4.6.0 NVIDIA 610.88, NVIDIA Corporation
+[18:21:13] [main/INFO] (ModDiscoverer) Found mod file "neoforge-21.1.252-minecraft-merged-1.21.1-loom.mappings.1_21_1.layered+hash.40359-v2-neoforge-21.1.252.jar" [locator: neoforge devenv provider ([C:\Users\rarab\.gradle\caches\fabric-loom\minecraftMaven\net\minecraft\neoforge-21.1.252-minecraft-merged\1.21.1-loom.mappings.1_21_1.layered+hash.40359-v2-neoforge-21.1.252\neoforge-21.1.252-minecraft-merged-1.21.1-loom.mappings.1_21_1.layered+hash.40359-v2-neoforge-21.1.252.jar])]
+[18:21:13] [main/INFO] (ModDiscoverer) Found mod file "curios-neoforge-9.5.1+1.21.1.jar" [locator: {mods folder locator at C:\Users\rarab\IdeaProjects\belty\neoforge\run\mods}, reader: mod manifest]
+[18:21:13] [main/INFO] (ModDiscoverer) Found mod file "Platform-neoforge-1.21.1-1.4.2.jar" [locator: {mods folder locator at C:\Users\rarab\IdeaProjects\belty\neoforge\run\mods}, reader: mod manifest]
+[18:21:13] [main/INFO] (ModDiscoverer) Found mod file "VanillaBackport-neoforge-1.21.1-1.2.2.jar" [locator: {mods folder locator at C:\Users\rarab\IdeaProjects\belty\neoforge\run\mods}, reader: mod manifest]
+[18:21:13] [main/INFO] (ModDiscoverer) Found mod file "main" [locator: userdev mods and services, reader: mod manifest]
+[18:21:13] [main/INFO] (ModDiscoverer) Found mod file "neoforge-21.1.252-minecraft-merged-1.21.1-loom.mappings.1_21_1.layered+hash.40359-v2-neoforge-21.1.252.jar" [locator: userdev mods and services, reader: mod manifest]
+[18:21:13] [main/INFO] (ModDiscoverer) Found mod file "architectury-neoforge-ba7732d8-13.0.11.jar" [locator: userdev mods and services, reader: mod manifest]
+[18:21:13] [main/INFO] (ModDiscoverer) Found mod file "16904678178838119056.jar" [locator: userdev mods and services, reader: mod manifest]
+[18:21:13] [main/INFO] (ModDiscoverer) Found gamelibrary file "mixinextras-neoforge-0.5.3.jar" [locator: userdev mods and services, reader: mod manifest]
+[18:21:13] [main/WARN] (JarSelector) Attempted to select a dependency jar for JarJar which was passed in as source: library:mixinextras.neoforge. Using Mod File: C:\Users\rarab\.gradle\caches\modules-2\files-2.1\io.github.llamalad7\mixinextras-neoforge\0.5.3\a0919957808de97707c5fb4ce073e66aeef3e187\mixinextras-neoforge-0.5.3.jar
+[18:21:13] [main/INFO] (JarInJarDependencyLocator) Found 1 dependencies adding them to mods collection
+[18:21:13] [main/INFO] (ModDiscoverer) Found library file "net.neoforged.neoforge-coremods-21.1.252.jar" [parent: neoforge-21.1.252-minecraft-merged-1.21.1-loom.mappings.1_21_1.layered+hash.40359-v2-neoforge-21.1.252.jar, locator: jarinjar, reader: mod manifest]
+[18:21:13] [main/INFO] (ModDiscoverer) 
+     Mod List:
+		Name Version (Mod Id)
+
+		Architectury 13.0.11 (architectury)
+		Belty 1.0.0 (belty)
+		Curios API 9.5.1+1.21.1 (curios)
+		generated_0660fc9 1 (generated_0660fc9)
+		Minecraft 1.21.1 (minecraft)
+		NeoForge 21.1.252 (neoforge)
+		Platform 1.4.2 (platform)
+		VanillaBackport 1.2.2 (vanillabackport)
+[18:21:14] [main/INFO] (mixin) Compatibility level set to JAVA_21
+[18:21:14] [main/INFO] (LaunchServiceHandler) Launching target 'forgeclientdev' with arguments [--version, 21.1.252, --gameDir, ., --assetsDir, C:\Users\rarab\.gradle\caches\fabric-loom\assets, --assetIndex, 1.21.1-17]
+[18:21:14] [main/INFO] (unprotect) Found 8254 Minecraft classes
+[18:21:14] [main/WARN] (mixin) Reference map 'curios.refmap.json' for curios.neoforge.mixins.json could not be read. If this is a development environment you can ignore this message
+[18:21:14] [main/WARN] (mixin) Reference map 'curios.refmap.json' for curios.mixins.json could not be read. If this is a development environment you can ignore this message
+[18:21:14] [main/WARN] (mixin) Error loading class: jeresources/api/util/BiomeHelper (java.lang.ClassNotFoundException: jeresources.api.util.BiomeHelper)
+[18:21:14] [main/WARN] (mixin) Error loading class: yalter/mousetweaks/Main (java.lang.ClassNotFoundException: yalter.mousetweaks.Main)
+[18:21:14] [main/INFO] (MixinExtras|Service) Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.5.3).
+[21Nov2026 18:21:17.536] [Datafixer Bootstrap/INFO] [com.mojang.datafixers.DataFixerBuilder/]: 229 Datafixer optimizations took 603 milliseconds
+[21Nov2026 18:21:26.106] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [teleport, location] and [teleport, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
+[21Nov2026 18:21:26.107] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [teleport, location] and [teleport, targets] with inputs: [0.1 -0.5 .9, 0 0 0]
+[21Nov2026 18:21:26.112] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [teleport, destination] and [teleport, targets] with inputs: [Player, 0123, @e, dd12be42-52a9-4a91-a8a1-11c01849e498]
+[21Nov2026 18:21:26.112] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [teleport, targets] and [teleport, destination] with inputs: [Player, 0123, dd12be42-52a9-4a91-a8a1-11c01849e498]
+[21Nov2026 18:21:26.113] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [teleport, targets, location] and [teleport, targets, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
+[21Nov2026 18:21:26.279] [Render thread/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/rarab/.gradle/caches/fabric-loom/minecraftMaven/net/minecraft/neoforge-21.1.252-minecraft-merged/1.21.1-loom.mappings.1_21_1.layered+hash.40359-v2-neoforge-21.1.252/neoforge-21.1.252-minecraft-merged-1.21.1-loom.mappings.1_21_1.layered+hash.40359-v2-neoforge-21.1.252.jar%23203!/assets/.mcassetsroot' uses unexpected schema
+[21Nov2026 18:21:26.279] [Render thread/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/rarab/.gradle/caches/fabric-loom/minecraftMaven/net/minecraft/neoforge-21.1.252-minecraft-merged/1.21.1-loom.mappings.1_21_1.layered+hash.40359-v2-neoforge-21.1.252/neoforge-21.1.252-minecraft-merged-1.21.1-loom.mappings.1_21_1.layered+hash.40359-v2-neoforge-21.1.252.jar%23203!/data/.mcassetsroot' uses unexpected schema
+[21Nov2026 18:21:26.312] [Render thread/INFO] [com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService/]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
+[21Nov2026 18:21:26.327] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Setting user: Dev
+[21Nov2026 18:21:26.490] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Backend library: LWJGL version 3.3.3+5
+[21Nov2026 18:21:26.861] [modloading-worker-0/INFO] [net.neoforged.neoforge.common.NeoForgeMod/NEOFORGE-MOD]: NeoForge mod loading, version 21.1.252, for MC 1.21.1
+[21Nov2026 18:21:29.072] [Render thread/INFO] [net.neoforged.neoforge.gametest.GameTestHooks/]: Enabled Gametest Namespaces: []
+[21Nov2026 18:21:29.327] [Render thread/INFO] [net.minecraft.server.packs.resources.ReloadableResourceManager/]: Reloading ResourceManager: vanilla, mod_resources, mod/generated_0660fc9, mod/vanillabackport, mod/curios, mod/architectury, mod/belty, mod/neoforge, mod/platform
+[21Nov2026 18:21:29.467] [Worker-Main-2/INFO] [net.minecraft.client.gui.font.providers.UnihexProvider/]: Found unifont_jp_patch-15.1.05.hex, loading
+[21Nov2026 18:21:29.467] [Worker-Main-1/INFO] [net.minecraft.client.gui.font.providers.UnihexProvider/]: Found unifont_all_no_pua-15.1.05.hex, loading
+[21Nov2026 18:21:31.829] [Render thread/WARN] [net.minecraft.client.sounds.SoundEngine/]: Missing sound for event: minecraft:item.goat_horn.play
+[21Nov2026 18:21:31.830] [Render thread/WARN] [net.minecraft.client.sounds.SoundEngine/]: Missing sound for event: minecraft:entity.goat.screaming.horn_break
+[21Nov2026 18:21:31.830] [Render thread/WARN] [net.minecraft.client.sounds.SoundEngine/]: Missing sound for event: minecraft:block.potent_sulfur.geyser_continuous_eruption_start
+[21Nov2026 18:21:31.939] [Render thread/INFO] [com.mojang.blaze3d.audio.Library/]: OpenAL initialized on device OpenAL Soft on Headphone Jack (Realtek(R) Audio)
+[21Nov2026 18:21:31.940] [Render thread/INFO] [net.minecraft.client.sounds.SoundEngine/SOUNDS]: Sound engine started
+[21Nov2026 18:21:32.016] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 1024x1024x4 minecraft:textures/atlas/blocks.png-atlas
+[21Nov2026 18:21:32.022] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x4 minecraft:textures/atlas/signs.png-atlas
+[21Nov2026 18:21:32.022] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x512x4 minecraft:textures/atlas/shield_patterns.png-atlas
+[21Nov2026 18:21:32.022] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x512x4 minecraft:textures/atlas/banner_patterns.png-atlas
+[21Nov2026 18:21:32.022] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 2048x1024x4 minecraft:textures/atlas/armor_trims.png-atlas
+[21Nov2026 18:21:32.026] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x4 minecraft:textures/atlas/chest.png-atlas
+[21Nov2026 18:21:32.026] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 128x64x4 minecraft:textures/atlas/decorated_pot.png-atlas
+[21Nov2026 18:21:32.026] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x4 minecraft:textures/atlas/beds.png-atlas
+[21Nov2026 18:21:32.027] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x4 minecraft:textures/atlas/shulker_boxes.png-atlas
+[21Nov2026 18:21:32.120] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x0 minecraft:textures/atlas/particles.png-atlas
+[21Nov2026 18:21:32.122] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x0 minecraft:textures/atlas/paintings.png-atlas
+[21Nov2026 18:21:32.122] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x128x0 minecraft:textures/atlas/mob_effects.png-atlas
+[21Nov2026 18:21:32.123] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 64x64x0 minecraft:textures/atlas/map_decorations.png-atlas
+[21Nov2026 18:21:32.123] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 1024x1024x0 minecraft:textures/atlas/gui.png-atlas
+[21Nov2026 18:21:32.147] [Render thread/WARN] [net.minecraft.client.renderer.ShaderInstance/]: Shader rendertype_entity_translucent_emissive could not find sampler named Sampler2 in the specified shader program.
+[21Nov2026 18:21:32.194] [Render thread/INFO] [net.neoforged.neoforge.client.entity.animation.json.AnimationLoader/]: Loaded 0 entity animations
+[21Nov2026 18:21:32.198] [Render thread/INFO] [com.blackgear.vanillabackport.core.VanillaBackport/]: Loaded 2 custom leaf color(s)
+[21Nov2026 18:22:31.891] [Render thread/WARN] [net.neoforged.neoforge.common.CommonHooks/WP]: The following mods have version differences that were not resolved:
+generated_ec187b6 (version 1 -> MISSING)
+Things may not work well.
+[21Nov2026 18:22:32.593] [Render thread/INFO] [net.minecraft.world.item.crafting.RecipeManager/]: Loaded 1655 recipes
+[21Nov2026 18:22:32.694] [Render thread/INFO] [net.minecraft.advancements.AdvancementTree/]: Loaded 1735 advancements
+[21Nov2026 18:22:32.697] [Render thread/INFO] [net.minecraft.advancements.AdvancementTree/]: Loaded 1766 advancements
+[21Nov2026 18:22:32.702] [Render thread/INFO] [Curios API/]: Loaded 10 curio slots
+[21Nov2026 18:22:32.703] [Render thread/INFO] [Curios API/]: Loaded 2 curio entities
+[21Nov2026 18:22:32.984] [Render thread/INFO] [com.blackgear.vanillabackport.core.VanillaBackport/]: Loaded 3 custom dry foliage color rule(s)
+[21Nov2026 18:22:33.081] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Starting integrated minecraft server version 1.21.1
+[21Nov2026 18:22:33.082] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Generating keypair
+[21Nov2026 18:22:33.636] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Preparing start region for dimension minecraft:overworld
+[21Nov2026 18:22:33.842] [progressListener/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
+[21Nov2026 18:22:33.968] [Server thread/INFO] [net.neoforged.neoforge.server.permission.PermissionAPI/]: Successfully initialized permission handler neoforge:default_handler
+[21Nov2026 18:22:33.985] [progressListener/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Time elapsed: 337 ms
+[21Nov2026 18:22:34.031] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Changing view distance to 12, from 10
+[21Nov2026 18:22:34.031] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Changing simulation distance to 12, from 0
+[21Nov2026 18:22:34.532] [Server thread/INFO] [net.minecraft.server.players.PlayerList/]: Dev[local:E:2a6388b5] logged in with entity id 41 at (82.74028763683079, 68.0, -461.2398705881806)
+[21Nov2026 18:22:34.595] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dev joined the game
+[21Nov2026 18:22:35.121] [Render thread/INFO] [net.minecraft.advancements.AdvancementTree/]: Loaded 39 advancements
+[21Nov2026 18:23:03.376] [Render thread/INFO] [net.minecraft.advancements.AdvancementTree/]: Loaded 46 advancements
+[21Nov2026 18:23:04.533] [Render thread/INFO] [net.minecraft.advancements.AdvancementTree/]: Loaded 55 advancements
+[21Nov2026 18:30:30.331] [Render thread/INFO] [net.minecraft.advancements.AdvancementTree/]: Loaded 59 advancements
+[21Nov2026 18:30:38.247] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] Book cannot support that enchantment
+[21Nov2026 18:30:44.425] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] Enchanted Book cannot support that enchantment
+[21Nov2026 18:31:05.476] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: [Dev: Applied enchantment Cargo II to Dev's item]
+[21Nov2026 18:31:05.493] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] Applied enchantment Cargo II to Dev's item
+[21Nov2026 18:31:09.045] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: [Dev: Applied enchantment Cargo I to Dev's item]
+[21Nov2026 18:31:09.061] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] Applied enchantment Cargo I to Dev's item
+[21Nov2026 18:43:34.871] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Saving and pausing game...
+[21Nov2026 18:43:34.882] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[21Nov2026 18:43:34.889] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[21Nov2026 18:43:34.889] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[21Nov2026 18:43:53.622] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Saving and pausing game...
+[21Nov2026 18:43:53.633] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[21Nov2026 18:43:53.636] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[21Nov2026 18:43:53.637] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether

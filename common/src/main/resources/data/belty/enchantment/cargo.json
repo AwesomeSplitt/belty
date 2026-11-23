@@ -1,0 +1,16 @@
+{
+  "description": "Cargo",
+  "supported_items": "#belty:enchantable/belt",
+  "weight": 8,
+  "max_level": 3,
+  "min_cost": {
+    "base": 1,
+    "per_level_above_first": 1
+  },
+  "max_cost": {
+    "base": 51,
+    "per_level_above_first": 10
+  },
+  "anvil_cost": 4,
+  "slots": ["any"]
+}

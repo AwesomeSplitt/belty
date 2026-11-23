@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "belty",
+  "version": "${version}",
+  "name": "Belty",
+  "description": "This is an example description! Tell everyone what your mod is about!",
+  "authors": [
+    "Me!"
+  ],
+  "contact": {
+    "homepage": "https://fabricmc.net/",
+    "sources": "https://github.com/FabricMC/fabric-example-mod"
+  },
+  "license": "CC0-1.0",
+  "icon": "assets/belty/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "net.awesomesplitt.belty.fabric.BeltyFabric"
+    ],
+    "client": [
+      "net.awesomesplitt.belty.fabric.client.BeltyFabricClient"
+    ]
+  },
+  "mixins": [
+    "belty.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.20.1",
+    "minecraft": "~1.21.1",
+    "java": ">=21",
+    "architectury": ">=13.0.11",
+    "fabric-api": "*",
+    "vanillabackport": ">=1.2.2"
+  },
+  "suggests": {
+    "curiosapi": "*"
+  }
+}
