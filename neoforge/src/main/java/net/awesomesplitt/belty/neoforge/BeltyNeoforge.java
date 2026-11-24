@@ -1,17 +1,10 @@
 package net.awesomesplitt.belty.neoforge;
 
-import dev.architectury.networking.NetworkManager;
-import dev.architectury.registry.menu.MenuRegistry;
 import net.awesomesplitt.belty.client.renderer.ToolBeltLayer;
-import net.awesomesplitt.belty.network.OpenGuiPayload;
 import net.awesomesplitt.belty.registry.MenuRegistries;
-import net.awesomesplitt.belty.screen.ToolBeltMenu;
 import net.awesomesplitt.belty.screen.ToolBeltScreen;
-import net.awesomesplitt.belty.util.PlayerInventoryProvider;
 import net.minecraft.client.renderer.entity.player.PlayerRenderer;
 import net.minecraft.client.resources.PlayerSkin;
-import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.world.SimpleMenuProvider;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;

@@ -2,7 +2,6 @@ package net.awesomesplitt.belty.client;
 
 import dev.architectury.event.events.client.ClientLifecycleEvent;
 import dev.architectury.event.events.client.ClientTickEvent;
-import dev.architectury.injectables.annotations.PlatformOnly;
 import dev.architectury.networking.NetworkManager;
 import dev.architectury.registry.menu.MenuRegistry;
 import net.awesomesplitt.belty.registry.ItemRegistries;
@@ -13,7 +12,6 @@ import net.awesomesplitt.belty.screen.ToolBeltMenu;
 import net.awesomesplitt.belty.screen.ToolBeltScreen;
 import net.awesomesplitt.belty.util.PlayerInventoryProvider;
 import net.minecraft.client.Minecraft;
-import net.minecraft.world.entity.player.Inventory;
 
 public class ClientEvents {
     public static void register() {
@@ -32,8 +30,6 @@ public class ClientEvents {
     }
 
     private static void tryOpenToolBelt(Minecraft minecraft) {
-        Inventory inv = minecraft.player.getInventory();
-
         if (minecraft.player.containerMenu instanceof ToolBeltMenu) {
             return;
         }
