@@ -9,6 +9,7 @@ import net.awesomesplitt.belty.registry.ItemRegistries;
 import net.awesomesplitt.belty.network.OpenGuiPayload;
 import net.awesomesplitt.belty.registry.MenuRegistries;
 import net.awesomesplitt.belty.screen.ToolBeltMenu;
+import net.awesomesplitt.belty.util.PlayerInventoryProvider;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.SimpleMenuProvider;
 
@@ -21,7 +22,10 @@ public final class Belty {
         KeyMappingRegistries.register();
         ModelLayerRegistries.register();
         ClientEvents.register();
+        registerReceivers();
+    }
 
+    private static void registerReceivers() {
         NetworkManager.registerReceiver(NetworkManager.c2s(),
                 OpenGuiPayload.TYPE, OpenGuiPayload.STREAM_CODEC,
                 (payload, context) -> {
@@ -29,9 +33,9 @@ public final class Belty {
                     context.queue(() -> {
                         MenuRegistry.openExtendedMenu(player, new SimpleMenuProvider(
                                         (i, inv, p) -> new ToolBeltMenu(i, inv, payload.slot()),
-                                        player.getInventory().getItem(payload.slot()).getHoverName()
-                            ),
-            buf -> buf.writeVarInt(payload.slot())
+                                        PlayerInventoryProvider.getItem(player, payload.slot()).getHoverName()
+                                ),
+                                buf -> buf.writeVarInt(payload.slot())
                         );
                     });
                 });

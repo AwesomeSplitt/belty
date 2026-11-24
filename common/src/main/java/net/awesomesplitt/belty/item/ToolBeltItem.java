@@ -3,6 +3,7 @@ package net.awesomesplitt.belty.item;
 import dev.architectury.registry.menu.MenuRegistry;
 import net.awesomesplitt.belty.registry.EnchantmentRegistries;
 import net.awesomesplitt.belty.screen.ToolBeltMenu;
+import net.awesomesplitt.belty.util.PlayerInventoryProvider;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.*;
@@ -34,10 +35,10 @@ public class ToolBeltItem extends Item implements Equipable {
         if (!level.isClientSide) {
             MenuRegistry.openExtendedMenu((ServerPlayer) player,
                     new SimpleMenuProvider(
-                            (i, inv, p) -> new ToolBeltMenu(i, inv, inv.findSlotMatchingItem(item)),
+                            (i, inv, p) -> new ToolBeltMenu(i, inv, PlayerInventoryProvider.findSlotMatchingItem(p, item)),
                             item.getHoverName()
                     ),
-                    buf -> buf.writeVarInt(player.getInventory().findSlotMatchingItem(item))
+                    buf -> buf.writeVarInt(PlayerInventoryProvider.findSlotMatchingItem(player, item))
             );
         }
 

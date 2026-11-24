@@ -4,6 +4,7 @@ import net.awesomesplitt.belty.item.ToolBeltContainer;
 import net.awesomesplitt.belty.item.ToolBeltItem;
 import net.awesomesplitt.belty.registry.MenuRegistries;
 import net.awesomesplitt.belty.registry.TagRegistries;
+import net.awesomesplitt.belty.util.PlayerInventoryProvider;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.Container;
 import net.minecraft.world.entity.player.Inventory;
@@ -23,7 +24,7 @@ public class ToolBeltMenu extends AbstractContainerMenu {
 
     public ToolBeltMenu(int containerId, Inventory inv, int i) {
         super(MenuRegistries.TOOL_BELT_MENU.get(), containerId);
-        this.belt_item = inv.getItem(i);
+        this.belt_item = PlayerInventoryProvider.getItem(inv.player, i);
         this.tool_slots = ToolBeltItem.getToolSlots(this.belt_item, inv.player.level());
         this.bundle_slots = ToolBeltItem.getBundleSlots(this.belt_item, inv.player.level());
 
@@ -61,7 +62,7 @@ public class ToolBeltMenu extends AbstractContainerMenu {
 
     @Override
     public boolean stillValid(Player player) {
-        return player.getInventory().contains(this.belt_item) || this.belt_item == this.getCarried();
+        return PlayerInventoryProvider.contains(player, this.belt_item) || this.belt_item == this.getCarried();
     }
 
     @Override

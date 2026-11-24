@@ -5,6 +5,7 @@ import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.awesomesplitt.belty.Belty;
 import net.awesomesplitt.belty.registry.ModelLayerRegistries;
 import net.awesomesplitt.belty.item.ToolBeltItem;
+import net.awesomesplitt.belty.util.PlayerInventoryProvider;
 import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.geom.EntityModelSet;
 import net.minecraft.client.renderer.MultiBufferSource;
@@ -16,7 +17,10 @@ import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+
+import java.util.List;
 
 public class ToolBeltLayer<T extends LivingEntity, M extends EntityModel<T>> extends RenderLayer<T, M> {
     private static final ResourceLocation BELT_LOCATION = ResourceLocation.fromNamespaceAndPath(Belty.MOD_ID, "textures/entity/tool_belt.png");
@@ -30,6 +34,15 @@ public class ToolBeltLayer<T extends LivingEntity, M extends EntityModel<T>> ext
     @Override
     public void render(PoseStack poseStack, MultiBufferSource multiBufferSource, int i, T entity, float f, float g, float h, float j, float k, float l) {
         ItemStack itemStack = entity.getItemBySlot(EquipmentSlot.LEGS);
+        if (entity instanceof Player player) {
+            List<ItemStack> extras = PlayerInventoryProvider.getItemByIdentifier(player, "belt");
+            for (ItemStack item : extras) {
+                if (item.getItem() instanceof ToolBeltItem) {
+                    itemStack = item;
+                    break;
+                }
+            }
+        }
         if (itemStack.getItem() instanceof ToolBeltItem) {
             poseStack.pushPose();
             poseStack.translate(0.0F, -0.75, 0.0F);

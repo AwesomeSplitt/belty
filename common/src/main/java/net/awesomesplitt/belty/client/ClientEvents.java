@@ -2,14 +2,16 @@ package net.awesomesplitt.belty.client;
 
 import dev.architectury.event.events.client.ClientLifecycleEvent;
 import dev.architectury.event.events.client.ClientTickEvent;
+import dev.architectury.injectables.annotations.PlatformOnly;
 import dev.architectury.networking.NetworkManager;
 import dev.architectury.registry.menu.MenuRegistry;
+import net.awesomesplitt.belty.registry.ItemRegistries;
 import net.awesomesplitt.belty.registry.KeyMappingRegistries;
-import net.awesomesplitt.belty.item.ToolBeltItem;
 import net.awesomesplitt.belty.network.OpenGuiPayload;
 import net.awesomesplitt.belty.registry.MenuRegistries;
 import net.awesomesplitt.belty.screen.ToolBeltMenu;
 import net.awesomesplitt.belty.screen.ToolBeltScreen;
+import net.awesomesplitt.belty.util.PlayerInventoryProvider;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.entity.player.Inventory;
 
@@ -36,25 +38,9 @@ public class ClientEvents {
             return;
         }
 
-        for (int i = 0; i < inv.armor.size(); i++) {
-            if (inv.armor.get(i).getItem() instanceof ToolBeltItem) {
-                NetworkManager.sendToServer(new OpenGuiPayload(i + inv.items.size()));
-                return;
-            }
-        }
-
-        for (int i = 0; i < inv.offhand.size(); i++) {
-            if (inv.offhand.get(i).getItem() instanceof ToolBeltItem) {
-                NetworkManager.sendToServer(new OpenGuiPayload(i + inv.items.size() + inv.armor.size()));
-                return;
-            }
-        }
-
-        for (int i = 0; i < inv.items.size(); i++) {
-            if (inv.items.get(i).getItem() instanceof ToolBeltItem) {
-                NetworkManager.sendToServer(new OpenGuiPayload(i));
-                return;
-            }
+        int slot = PlayerInventoryProvider.findSlotMatching(minecraft.player, item -> item.is(ItemRegistries.TOOL_BELT.get()));
+        if (slot != -1) {
+            NetworkManager.sendToServer(new OpenGuiPayload(slot));
         }
     }
 }
