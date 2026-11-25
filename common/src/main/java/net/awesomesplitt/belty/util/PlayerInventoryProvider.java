@@ -1,27 +1,69 @@
 package net.awesomesplitt.belty.util;
 
-import dev.architectury.injectables.annotations.ExpectPlatform;
+import net.minecraft.core.NonNullList;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 
-import java.util.List;
 import java.util.function.Predicate;
 
 public final class PlayerInventoryProvider {
+    private static final NonNullList<IContainerProvider> CONTAINER_PROVIDERS = NonNullList.create();
 
-    @ExpectPlatform
+    public static boolean register(IContainerProvider provider) {
+        if (CONTAINER_PROVIDERS.stream().anyMatch(p -> p.id() == provider.id())) {
+            return false;
+        }
+
+        return CONTAINER_PROVIDERS.add(provider);
+    }
+
+    public static IContainerProvider getProvider(String id) {
+        for (IContainerProvider provider : CONTAINER_PROVIDERS) {
+            if (provider.id() == id) {
+                return provider;
+            }
+        }
+        throw new NullPointerException("No IContainerProvider of the id `" + id + "` is registered.");
+    }
+
+    public static int getIndexOffset(String id, Player player) {
+        int index = 0;
+        for (IContainerProvider provider : CONTAINER_PROVIDERS) {
+            if (provider.id() == id) {
+                return index;
+            }
+            index += provider.getSize(player);
+        }
+        return -1;
+    }
+
     public static ItemStack getItem(Player player, int index) {
-        throw new AssertionError();
+        for (IContainerProvider provider : CONTAINER_PROVIDERS) {
+            if (index < provider.getSize(player)) {
+                return provider.getItem(player, index);
+            }
+            index -= provider.getSize(player);
+        }
+        return ItemStack.EMPTY;
     }
 
-    @ExpectPlatform
     public static boolean contains(Player player, ItemStack itemStack) {
-        throw new AssertionError();
+        for (IContainerProvider provider : CONTAINER_PROVIDERS) {
+            if (provider.contains(player, itemStack)) {
+                return true;
+            }
+        }
+        return false;
     }
 
-    @ExpectPlatform
     public static int findSlotMatching(Player player, Predicate<ItemStack> filter) {
-        throw new AssertionError();
+        for (IContainerProvider provider : CONTAINER_PROVIDERS) {
+            int slot = provider.findSlotMatching(player, filter);
+            if (slot != -1) {
+                return slot;
+            }
+        }
+        return -1;
     }
 
     public static int findSlotMatchingItem(Player player, ItemStack itemStack) {
@@ -30,8 +72,25 @@ public final class PlayerInventoryProvider {
         );
     }
 
-    @ExpectPlatform
-    public static List<ItemStack> getItemByIdentifier(Player player, String identifier) {
-        throw new AssertionError();
+    public static NonNullList<SlotResult> getItemByIdentifier(Player player, String identifier) {
+        NonNullList<SlotResult> list = NonNullList.create();
+
+        for (IContainerProvider provider : CONTAINER_PROVIDERS) {
+            NonNullList<SlotResult> slots = provider.getItemByIdentifier(player, identifier);
+            list.addAll(slots);
+        }
+        return list;
     }
+
+    public static boolean isSlotVisible(Player player, int index) {
+        for (IContainerProvider provider : CONTAINER_PROVIDERS) {
+            if (index < provider.getSize(player)) {
+                return provider.isSlotVisible(player, index);
+            }
+            index -= provider.getSize(player);
+        }
+        return false;
+    }
+
+    public static record SlotResult(ItemStack itemStack, int index, String containerId) {}
 }

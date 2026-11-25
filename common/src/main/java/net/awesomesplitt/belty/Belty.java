@@ -9,6 +9,7 @@ import net.awesomesplitt.belty.registry.ItemRegistries;
 import net.awesomesplitt.belty.network.OpenGuiPayload;
 import net.awesomesplitt.belty.registry.MenuRegistries;
 import net.awesomesplitt.belty.screen.ToolBeltMenu;
+import net.awesomesplitt.belty.util.MinecraftContainerProvider;
 import net.awesomesplitt.belty.util.PlayerInventoryProvider;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.SimpleMenuProvider;
@@ -23,6 +24,7 @@ public final class Belty {
         ModelLayerRegistries.register();
         ClientEvents.register();
         registerReceivers();
+        PlayerInventoryProvider.register(new MinecraftContainerProvider());
     }
 
     private static void registerReceivers() {

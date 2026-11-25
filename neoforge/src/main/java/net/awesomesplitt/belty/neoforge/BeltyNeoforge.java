@@ -1,12 +1,15 @@
 package net.awesomesplitt.belty.neoforge;
 
 import net.awesomesplitt.belty.client.renderer.ToolBeltLayer;
+import net.awesomesplitt.belty.neoforge.util.CuriosContainerProvider;
 import net.awesomesplitt.belty.registry.MenuRegistries;
 import net.awesomesplitt.belty.screen.ToolBeltScreen;
+import net.awesomesplitt.belty.util.PlayerInventoryProvider;
 import net.minecraft.client.renderer.entity.player.PlayerRenderer;
 import net.minecraft.client.resources.PlayerSkin;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.ModList;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 
@@ -19,6 +22,13 @@ public final class BeltyNeoforge {
     public BeltyNeoforge() {
         // Run our common setup.
         Belty.init();
+        registerCuriosProvider();
+    }
+
+    private static void registerCuriosProvider() {
+        if (ModList.get().isLoaded("curios")) {
+            PlayerInventoryProvider.register(new CuriosContainerProvider());
+        }
     }
 
     @EventBusSubscriber(modid = Belty.MOD_ID, value = Dist.CLIENT)
