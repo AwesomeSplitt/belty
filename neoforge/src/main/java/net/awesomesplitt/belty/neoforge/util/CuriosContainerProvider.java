@@ -5,6 +5,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import org.jetbrains.annotations.NotNull;
 import top.theillusivec4.curios.api.CuriosApi;
+import top.theillusivec4.curios.api.SlotContext;
 import top.theillusivec4.curios.api.SlotResult;
 import top.theillusivec4.curios.api.type.capability.ICuriosItemHandler;
 import top.theillusivec4.curios.api.type.inventory.ICurioStacksHandler;
@@ -58,6 +59,18 @@ public class CuriosContainerProvider implements IContainerProvider {
         }
 
         Optional<SlotResult> optional = curios.get().findFirstCurio(filter);
-        return optional.map(slotResult -> slotResult.slotContext().index()).orElse(-1);
+        if (optional.isEmpty()) {
+            return -1;
+        }
+
+        SlotContext context = optional.get().slotContext();
+        int i = 0;
+        for (ICurioStacksHandler stacks : curios.get().getCurios().values()) {
+            if (stacks.getIdentifier().equals(context.identifier())) {
+                return context.index() + i;
+            }
+            i += stacks.getSlots();
+        }
+        return -1;
     }
 }
