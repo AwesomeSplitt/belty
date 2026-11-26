@@ -1,6 +1,5 @@
 package net.awesomesplitt.belty.util;
 
-import dev.emi.trinkets.api.Trinket;
 import dev.emi.trinkets.api.TrinketsApi;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
