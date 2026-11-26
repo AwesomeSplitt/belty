@@ -23,9 +23,7 @@ public class TrinketsContainerProvider implements IContainerProvider {
         }
 
         AtomicInteger i = new AtomicInteger();
-        component.get().forEach((a,b) -> {
-            i.getAndIncrement();
-        });
+        component.get().forEach((a,b) -> i.getAndIncrement());
         return i.get();
     }
 
