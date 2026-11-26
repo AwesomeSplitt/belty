@@ -1,8 +1,7 @@
 package net.awesomesplitt.belty.fabric;
 
-import net.fabricmc.api.ModInitializer;
-
 import net.awesomesplitt.belty.Belty;
+import net.fabricmc.api.ModInitializer;
 
 public final class BeltyFabric implements ModInitializer {
     @Override
