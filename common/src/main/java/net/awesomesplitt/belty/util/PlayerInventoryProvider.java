@@ -60,7 +60,7 @@ public final class PlayerInventoryProvider {
         for (IContainerProvider provider : CONTAINER_PROVIDERS) {
             int slot = provider.findSlotMatching(player, filter);
             if (slot != -1) {
-                return slot;
+                return slot + getIndexOffset(provider.id(), player);
             }
         }
         return -1;
@@ -71,26 +71,4 @@ public final class PlayerInventoryProvider {
                 itemStack2 -> !itemStack2.isEmpty() && ItemStack.isSameItemSameComponents(itemStack, itemStack2)
         );
     }
-
-    public static NonNullList<SlotResult> getItemByIdentifier(Player player, String identifier) {
-        NonNullList<SlotResult> list = NonNullList.create();
-
-        for (IContainerProvider provider : CONTAINER_PROVIDERS) {
-            NonNullList<SlotResult> slots = provider.getItemByIdentifier(player, identifier);
-            list.addAll(slots);
-        }
-        return list;
-    }
-
-    public static boolean isSlotVisible(Player player, int index) {
-        for (IContainerProvider provider : CONTAINER_PROVIDERS) {
-            if (index < provider.getSize(player)) {
-                return provider.isSlotVisible(player, index);
-            }
-            index -= provider.getSize(player);
-        }
-        return false;
-    }
-
-    public static record SlotResult(ItemStack itemStack, int index, String containerId) {}
 }

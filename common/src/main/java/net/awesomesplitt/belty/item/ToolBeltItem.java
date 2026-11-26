@@ -28,11 +28,7 @@ public class ToolBeltItem extends Item implements Equipable {
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand interactionHand) {
         ItemStack item = player.getItemInHand(interactionHand);
 
-        if (player.isCrouching()) {
-            return this.swapWithEquipmentSlot(this, level, player, interactionHand);
-        }
-
-        if (!level.isClientSide) {
+        if (player.isCrouching() && !level.isClientSide) {
             MenuRegistry.openExtendedMenu((ServerPlayer) player,
                     new SimpleMenuProvider(
                             (i, inv, p) -> new ToolBeltMenu(i, inv, PlayerInventoryProvider.findSlotMatchingItem(p, item)),
@@ -40,9 +36,10 @@ public class ToolBeltItem extends Item implements Equipable {
                     ),
                     buf -> buf.writeVarInt(PlayerInventoryProvider.findSlotMatchingItem(player, item))
             );
+            return InteractionResultHolder.pass(player.getItemInHand(interactionHand));
         }
 
-        return InteractionResultHolder.pass(player.getItemInHand(interactionHand));
+        return this.swapWithEquipmentSlot(this, level, player, interactionHand);
     }
 
     public boolean canFitInsideContainerItems() {

@@ -1,7 +1,5 @@
 package net.awesomesplitt.belty.util;
 
-import net.minecraft.core.NonNullList;
-import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -40,35 +38,5 @@ public class MinecraftContainerProvider implements IContainerProvider {
             }
         }
         return -1;
-    }
-
-    @Override
-    public NonNullList<PlayerInventoryProvider.SlotResult> getItemByIdentifier(Player player, String identifier) {
-        EquipmentSlot slot = switch (identifier) {
-            case "feet" -> EquipmentSlot.FEET;
-            case "legs" -> EquipmentSlot.LEGS;
-            case "chest" -> EquipmentSlot.CHEST;
-            case "head" -> EquipmentSlot.HEAD;
-            case "mainhand" -> EquipmentSlot.MAINHAND;
-            case "offhand" -> EquipmentSlot.OFFHAND;
-            default -> null;
-        };
-
-        if (slot == null) {
-            return NonNullList.create();
-        }
-
-        int index;
-        if (slot == EquipmentSlot.MAINHAND) {
-            index = player.getInventory().selected;
-        }
-        else if (slot == EquipmentSlot.OFFHAND) {
-            index = player.getInventory().getContainerSize() - 1;
-        }
-        else {
-            index = slot.getIndex(player.getInventory().items.size());
-        }
-
-        return NonNullList.of(new PlayerInventoryProvider.SlotResult(player.getItemBySlot(slot), index, this.id()));
     }
 }

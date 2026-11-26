@@ -1,5 +1,6 @@
 package net.awesomesplitt.belty.fabric.client;
 
+import net.awesomesplitt.belty.Belty;
 import net.awesomesplitt.belty.client.renderer.ToolBeltLayer;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.rendering.v1.LivingEntityFeatureRendererRegistrationCallback;
@@ -12,6 +13,8 @@ public final class BeltyFabricClient implements ClientModInitializer {
             if (entityRenderer instanceof PlayerRenderer playerRenderer) {
                 registrationHelper.register(new ToolBeltLayer<>(playerRenderer, context.getModelSet()));
             }
+
+            Belty.registerAccessories(context.getModelSet());
         }));
     }
 }
