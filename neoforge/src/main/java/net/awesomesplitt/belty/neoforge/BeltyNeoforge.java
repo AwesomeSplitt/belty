@@ -1,10 +1,13 @@
 package net.awesomesplitt.belty.neoforge;
 
+import dev.architectury.platform.Platform;
 import net.awesomesplitt.belty.client.renderer.ToolBeltLayer;
+import net.awesomesplitt.belty.neoforge.client.renderer.integration.curios.ToolBeltCuriosRenderer;
 import net.awesomesplitt.belty.neoforge.util.CuriosContainerProvider;
 import net.awesomesplitt.belty.registry.MenuRegistries;
 import net.awesomesplitt.belty.screen.ToolBeltScreen;
 import net.awesomesplitt.belty.util.PlayerInventoryProvider;
+import net.minecraft.client.model.geom.EntityModelSet;
 import net.minecraft.client.renderer.entity.player.PlayerRenderer;
 import net.minecraft.client.resources.PlayerSkin;
 import net.neoforged.api.distmarker.Dist;
@@ -14,6 +17,7 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 
 import net.awesomesplitt.belty.Belty;
+import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 
@@ -47,6 +51,16 @@ public final class BeltyNeoforge {
                 if (renderer != null) {
                     renderer.addLayer(new ToolBeltLayer<>(renderer, event.getEntityModels()));
                 }
+            }
+
+            Belty.registerAccessories(event.getEntityModels());
+            ToolBeltCuriosRenderer.createModel(event.getEntityModels());
+        }
+
+        @SubscribeEvent
+        public static void registerCuriosRenderer(FMLClientSetupEvent event) {
+            if (Platform.isModLoaded("curios")) {
+                ToolBeltCuriosRenderer.register();
             }
         }
     }
