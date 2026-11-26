@@ -15,6 +15,7 @@ public final class BeltyFabricClient implements ClientModInitializer {
             }
 
             Belty.registerAccessories(context.getModelSet());
+            Belty.registerTrinkets(context.getModelSet());
         }));
     }
 }

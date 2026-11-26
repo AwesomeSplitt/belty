@@ -5,6 +5,7 @@ import dev.architectury.platform.Platform;
 import dev.architectury.registry.menu.MenuRegistry;
 import net.awesomesplitt.belty.client.ClientEvents;
 import net.awesomesplitt.belty.client.renderer.integration.accessories.ToolBeltAccessoriesRenderer;
+import net.awesomesplitt.belty.client.renderer.integration.trinkets.ToolBeltTrinketsRenderer;
 import net.awesomesplitt.belty.network.OpenGuiPayload;
 import net.awesomesplitt.belty.registry.ItemRegistries;
 import net.awesomesplitt.belty.registry.KeyMappingRegistries;
@@ -14,6 +15,7 @@ import net.awesomesplitt.belty.screen.ToolBeltMenu;
 import net.awesomesplitt.belty.util.AccessoriesContainerProvider;
 import net.awesomesplitt.belty.util.MinecraftContainerProvider;
 import net.awesomesplitt.belty.util.PlayerInventoryProvider;
+import net.awesomesplitt.belty.util.TrinketsContainerProvider;
 import net.minecraft.client.model.geom.EntityModelSet;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.SimpleMenuProvider;
@@ -52,11 +54,20 @@ public final class Belty {
         if (Platform.isModLoaded("accessories")) {
             PlayerInventoryProvider.register(new AccessoriesContainerProvider());
         }
+        if (Platform.isModLoaded("trinkets")) {
+            PlayerInventoryProvider.register(new TrinketsContainerProvider());
+        }
     }
 
     public static void registerAccessories(EntityModelSet modelSet) {
         if (Platform.isModLoaded("accessories")) {
             new ToolBeltAccessoriesRenderer(modelSet).register();
+        }
+    }
+
+    public static void registerTrinkets(EntityModelSet modelSet) {
+        if (Platform.isModLoaded("trinkets")) {
+            new ToolBeltTrinketsRenderer(modelSet).register();
         }
     }
 }
